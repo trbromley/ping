@@ -2,6 +2,8 @@
 
 Ping is a game inspired by Pong and built using LÖVE.
 
+Check it out [here](https://trbromley.github.io/ping)!
+
 ![Ping](imgs/readme.png)
 
 ## How to run
