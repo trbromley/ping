@@ -35,8 +35,8 @@ menuState = 1
 maxScore = 5
 
 local windowWidth, windowHeight = love.window.getDesktopDimensions()
---windowWidth = 0.7 * windowWidth
---windowHeight = 0.7 * windowHeight
+windowWidth = 0.7 * windowWidth
+windowHeight = 0.7 * windowHeight
 
 Box = class()
 
@@ -700,10 +700,7 @@ function setHighlight() love.graphics.setColor(0.5, 0.5, 0.5) end
 
 
 function love.keypressed(key)
-    if key == "escape" then
-        if gameState == "menu" then
-            love.event.quit()
-        end
+    if key == "escape" and gameState ~= "menu" then
         sounds['menu']:play()
         gameState = "menu"
         puck:reset()
