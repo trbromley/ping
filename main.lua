@@ -631,13 +631,13 @@ function love.draw()
             love.graphics.printf("Two Player", leftBorder + boxThickness, gameHeight / 2 + 1 * fontSize, width, "center")
         end
 
-        if menuState == 3 then
-            setHighlight()
-            love.graphics.printf("Exit", leftBorder + boxThickness, gameHeight / 2 + 2 * fontSize, width, "center")
-            setWhite()
-        else
-            love.graphics.printf("Exit", leftBorder + boxThickness, gameHeight / 2 + 2 * fontSize, width, "center")
-        end
+        --if menuState == 3 then
+        --    setHighlight()
+        --    love.graphics.printf("Exit", leftBorder + boxThickness, gameHeight / 2 + 2 * fontSize, width, "center")
+        --    setWhite()
+        --else
+        --    love.graphics.printf("Exit", leftBorder + boxThickness, gameHeight / 2 + 2 * fontSize, width, "center")
+        --end
 
         push:finish()
         return
@@ -711,7 +711,7 @@ function love.keypressed(key)
 
     if gameState == "menu" then
         if key == "down" or key == "s" then
-            if menuState < 3 then
+            if menuState < 2 then
                 menuState = menuState + 1
                 sounds['menu']:play()
             end
@@ -729,9 +729,9 @@ function love.keypressed(key)
                 gameState = "begin"
                 sounds['menu']:play()
             end
-            if menuState == 3 then
-                love.event.quit()
-            end
+            --if menuState == 3 then
+            --    love.event.quit()
+            --end
         end
     end
 end
